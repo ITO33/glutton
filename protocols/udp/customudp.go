@@ -68,7 +68,7 @@ func Whitelisted(ip string, port string, whitelist map[string]bool) bool {
 func CustomUdpHandle(ctx context.Context, srcAddr, dstAddr *net.UDPAddr, data []byte, md connection.Metadata, logger interfaces.Logger, h interfaces.Honeypot) error {
 
 	// Whitelist and related error
-	whitelist, whitelist_error := ReadWhitelist("/root/llamapot/whitelist")
+	whitelist, whitelist_error := ReadWhitelist("/root/honeypot/whitelist")
 	// Source IP
 	source_ip := srcAddr.IP.String()
 	// Destination port
